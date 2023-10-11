@@ -1,10 +1,8 @@
 # Store-API
 
-## API Project Repository Description:
-
 This Git repository houses the source code for an API project designed to handle product filtering and retrieval. The API provides endpoints for retrieving products with various filters and sorting options. It is built using Node.js and Express, with data storage likely managed by a database system such as MongoDB. The primary functionality of the API includes filtering products based on parameters like featured status, company, price range, product name, and numeric filters on fields like price and rating. It also supports sorting and pagination.
 
-Filter Endpoints:
+## Filter Endpoints:
 
 GET /api/products - Retrieve all products with optional filters and sorting.
 
