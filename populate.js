@@ -6,9 +6,7 @@ const jsonProducts = require("./products.json");
 
 const start = async () => {
   try {
-    await connectDB(
-      "mongodb+srv://meeruzairwashere:191123_Khair.@learningbackend.spoupnw.mongodb.net/04-STORE-API?retryWrites=true&w=majority"
-    );
+    await connectDB(process.env.MONGO_URI);
     await Product.deleteMany();
     await Product.create(jsonProducts);
     console.log("success");

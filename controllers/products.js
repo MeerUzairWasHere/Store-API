@@ -50,9 +50,9 @@ const getAllProducts = async (req, res) => {
     result = result.sort("CreatedAt");
   }
 
-  if (select) {
-    const selectedList = field.split(",").join(" ");
-    result = result.field(selectedList);
+  if (field) {
+    const fieldList = field.split(",").join(" ");
+    result = result.field(fieldList);
   }
   const page = Number(req.query.page) || 1;
   const limit = Number(req.query.limit) || 10;
