@@ -190,3 +190,5 @@ const openApiSpec = {
       }
     }
   }
+
+  module.exports = { openApiSpec };
