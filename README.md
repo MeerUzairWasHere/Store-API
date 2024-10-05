@@ -1,41 +1,21 @@
 # Store-API
 
-This Git repository houses the source code for an API project designed to handle product filtering and retrieval. The API provides endpoints for retrieving products with various filters and sorting options. It is built using Node.js and Express, with data storage likely managed by a database system such as MongoDB. The primary functionality of the API includes filtering products based on parameters like featured status, company, price range, product name, and numeric filters on fields like price and rating. It also supports sorting and pagination.
+This repository contains a Node.js and Express API designed for product filtering and retrieval. The API allows clients to retrieve products with various query parameters, including featured status, company, price range, and name, and supports advanced numeric filters (price, rating). Additionally, the API offers flexible sorting and pagination options for efficient querying. MongoDB is used for data storage, and Express handles the request processing. Key features include customizable filters, dynamic sorting by fields, and pagination to optimize API responses. Comprehensive error handling and validation ensure API reliability and performance.
 
-## Filter Endpoints:
+Endpoints:
+- **GET /api/products**: Retrieve products with filters for featured status, company, price, name, and more.
+- **Query Parameters**:
+  - `featured`: Filter by featured status (`true`/`false`).
+  - `company`: Filter by company name.
+  - `price`: Filter by specific price.
+  - `name`: Filter by product name using regex.
+  - `numericFilters`: Apply filters on numeric fields (e.g., "price>=50,rating>4").
+  - `sort`: Sort products by fields (e.g., "price,-rating").
+  - `field`: Specify which fields to include in the response.
+  - `page`: Set pagination page (default: 1).
+  - `limit`: Limit the number of results per page (default: 10).
 
-GET /api/products - Retrieve all products with optional filters and sorting.
+Response:
+- **200 OK**: Returns a JSON object with `success`, `totalProducts`, and `products`.
 
-Query Parameters:
-
-featured (boolean): Filter products by featured status (true or false).
-
-company (string): Filter products by company name.
-
-price (number): Filter products by a specific price.
-
-name (string): Filter products by name using a case-insensitive regex.
-
-numericFilters (string): Filter numeric fields (price and rating) using operators. The format is field-operator-value, e.g., "price>=50,rating>4".
-
-sort (string): Sort products based on specified fields. Comma-separated list of fields. For ascending order, use field, and for descending order, use -field. Example: "price,-rating".
-
-field (string): Specify the fields to be returned in the result. Comma-separated list of fields.
-
-page (number): Pagination - page number (default is 1).
-
-limit (number): Pagination - number of items per page (default is 10).
-
-## Response:
-
-Status 200 (OK)
-
-JSON response with the following fields:
-
-success (boolean): Indicates the success of the request.
-
-totalProducts (number): Total number of products matching the filters.
-
-products (array): Array of product objects that meet the criteria.
-
-This API allows clients to filter and retrieve product data based on various criteria and provides sorting and pagination options for flexibility in querying the product catalog.
+This API simplifies managing and retrieving product data in e-commerce systems, offering a scalable, efficient solution for customizable queries.
