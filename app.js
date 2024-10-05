@@ -1,10 +1,11 @@
 require("dotenv").config();
 require("express-async-errors");
+const swaggerUi = require("swagger-ui-express");
+const { openApiSpec } = require("./openapispec.js");
+
 const express = require("express");
 const app = express();
 const port = process.env.PORT || 3000;
-const swaggerUi = require("swagger-ui-express");
-const { openApiSpec } = require("./openapispec.js");
 
 const connectDB = require("./db/connect");
 
