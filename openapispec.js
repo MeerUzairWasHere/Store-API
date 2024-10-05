@@ -3,7 +3,7 @@ const openApiSpec = {
     "info": {
       "title": "Store API",
       "description": "An API to fetch products from the store, with filtering, sorting, and pagination features.",
-      "version": "1.0.0",
+      "version": "1.1.0",
       "contact": {
         "name": "Mir Uzair Bashir",
         "email": "meer.uxair007@gmail.com"
@@ -11,7 +11,7 @@ const openApiSpec = {
     },
     "servers": [
       {
-        "url": "https://store-api-meeruzairwashere.onrender.com/api/v1",
+        "url": "https://store-api-meeruzairwashere.onrender.com",
         "description": "Live server"
       },
       {
